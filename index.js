@@ -1,3 +1,79 @@
+import * as THREE from './three.js-master/build/three.module.js'
+import {GLTFLoader} from './three.js-master/build/GLTFLoader.js'
+
+var scene, camera, renderer;
+
+var canvas = document.querySelector('.webg1')
+scene = new THREE.Scene()
+
+var loader = new GLTFLoader()
+loader.load('model/scene.bin', function(bin){
+    console.log(bin)
+    const root = bin.scene;
+    root.scale.set(1,1,1)
+    scene.add(root);
+}, function(xhr){
+    console.log((xhr.loader/xhr.total * 100) + "% loaded")
+}, function(error){
+    console.log('an error occurred')
+})
+
+var light = new THREE.DirectionalLight(0xffffff, 1)
+light.position.set(2,2,5)
+scene.add(light)
+
+
+/*
+var geometry = new THREE.BoxGeometry(2,2,2)
+var materal = new THREE.MeshBasicMaterial({
+    color: 0x00ffee
+})
+var boxMesh = new THREE.Mesh(geometry, materal)
+scene.add(boxMesh)
+*/
+
+var size = {
+    width: window.innerWidth,
+    height: window.innerHeight 
+}
+
+camera = new THREE.PerspectiveCamera(
+    95,
+    size.width/size.height,
+    0.01,
+    1000
+)
+camera.position.set(5,2,5)
+scene.add(camera)
+
+renderer = new THREE.WebGL1Renderer({
+    canvas: canvas
+})
+
+
+renderer.setSize(size.width, size.height)
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 5))
+renderer.shadowMap.enabled = true
+renderer.gammaOuput = true
+
+
+function animate(){
+    requestAnimationFrame(animate);
+
+    boxMesh.rotation.y += 0.01;
+
+renderer.render(scene,camera);
+
+
+}
+animate()
+
+
+
+
+
+
+/*
 var scene, camera, renderer;
 
 scene = new THREE.Scene();
@@ -17,7 +93,8 @@ document.body.appendChild(renderer.domElement);
 
 //cube
 var geometry = new THREE.BoxGeometry(1,1,1);
-var materal = new THREE.meshBasicMaterial({color: 0x00aaff});
+//var materal = new THREE.meshBasicMaterial({color: 0x00aaff});
+var materal = new THREE.MeshBasicMaterial({color: 0x00aaff})
 
 var cube = new THREE.Mesh(geometry, materal);
 scene.add(cube);
@@ -32,3 +109,4 @@ function animate(){
     renderer.render(scene,camera);
 }
 animate()
+*/
