@@ -1,11 +1,11 @@
-import * as THREE from './three.js-master/build/three.module.js'
-import {GLTFLoader} from './three.js-master/build/GLTFLoader.js'
 
 var scene, camera, renderer;
 
 var canvas = document.querySelector('.webg1')
 scene = new THREE.Scene()
 
+
+/*
 var loader = new GLTFLoader()
 loader.load('model/scene.bin', function(bin){
     console.log(bin)
@@ -21,16 +21,18 @@ loader.load('model/scene.bin', function(bin){
 var light = new THREE.DirectionalLight(0xffffff, 1)
 light.position.set(2,2,5)
 scene.add(light)
+*/
 
 
-/*
-var geometry = new THREE.BoxGeometry(2,2,2)
+var geometry = new THREE.BoxGeometry(3,2,2)
 var materal = new THREE.MeshBasicMaterial({
     color: 0x00ffee
 })
 var boxMesh = new THREE.Mesh(geometry, materal)
 scene.add(boxMesh)
-*/
+
+
+
 
 var size = {
     width: window.innerWidth,
@@ -38,16 +40,16 @@ var size = {
 }
 
 camera = new THREE.PerspectiveCamera(
-    95,
+    75,
     size.width/size.height,
-    0.01,
-    1000
+    0.1,
+    100
 )
-camera.position.set(5,2,5)
+camera.position.set(-1,1.3,6)
 scene.add(camera)
 
 renderer = new THREE.WebGL1Renderer({
-    canvas: canvas
+   canvas: canvas
 })
 
 
@@ -57,12 +59,15 @@ renderer.shadowMap.enabled = true
 renderer.gammaOuput = true
 
 
+
+
 function animate(){
     requestAnimationFrame(animate);
 
-    boxMesh.rotation.y += 0.01;
-
+   boxMesh.rotation.y += 0.01;
 renderer.render(scene,camera);
+
+
 
 
 }
