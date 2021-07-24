@@ -5,8 +5,8 @@ var canvas = document.querySelector('.webg1')
 scene = new THREE.Scene()
 
 
-/*
-var loader = new GLTFLoader()
+
+var loader = new THREE.GLTFLoader()
 loader.load('model/scene.bin', function(bin){
     console.log(bin)
     const root = bin.scene;
@@ -21,7 +21,7 @@ loader.load('model/scene.bin', function(bin){
 var light = new THREE.DirectionalLight(0xffffff, 1)
 light.position.set(2,2,5)
 scene.add(light)
-*/
+
 
 
 var geometry = new THREE.BoxGeometry(3,2,2)
