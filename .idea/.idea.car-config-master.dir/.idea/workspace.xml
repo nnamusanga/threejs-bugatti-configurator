@@ -19,10 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="739b5c05-5616-4e80-99f4-cec0c05c7855" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/three.js-master/build/GLTFLoader.js" beforeDir="false" afterPath="$PROJECT_DIR$/three.js-master/build/GLTFLoader.js" afterDir="false" />
-    </list>
+    <list default="true" id="739b5c05-5616-4e80-99f4-cec0c05c7855" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,6 +46,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -60,7 +58,7 @@
       <option name="presentableId" value="Default" />
       <updated>1626996304437</updated>
       <workItem from="1626996314814" duration="524000" />
-      <workItem from="1627167745628" duration="305000" />
+      <workItem from="1627167745628" duration="621000" />
     </task>
     <servers />
   </component>
