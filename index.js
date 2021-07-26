@@ -1,4 +1,4 @@
-
+/*
 var scene, camera, renderer;
 
 var canvas = document.querySelector('.webg1')
@@ -6,10 +6,17 @@ scene = new THREE.Scene()
 
 
 
+var controls = new THREE.OrbitControls(camera, renderer);
+controls.update()
+
+
+var abint = new THREE.AmbientLight(0x555500)
+scene.add(abint)
+
 var loader = new THREE.GLTFLoader()
-loader.load('model/scene.bin', function(bin){
-    console.log(bin)
-    const root = bin.scene;
+loader.load('model/car.glb', function(glb){
+    console.log(glb)
+    const root = glb.scene;
     root.scale.set(1,1,1)
     scene.add(root);
 }, function(xhr){
@@ -21,8 +28,9 @@ loader.load('model/scene.bin', function(bin){
 var light = new THREE.DirectionalLight(0xffffff, 1)
 light.position.set(2,2,5)
 scene.add(light)
+*/
 
-
+/*
 
 var geometry = new THREE.BoxGeometry(3,2,2)
 var materal = new THREE.MeshBasicMaterial({
@@ -30,10 +38,10 @@ var materal = new THREE.MeshBasicMaterial({
 })
 var boxMesh = new THREE.Mesh(geometry, materal)
 scene.add(boxMesh)
+*/
 
 
-
-
+/*
 var size = {
     width: window.innerWidth,
     height: window.innerHeight 
@@ -45,7 +53,7 @@ camera = new THREE.PerspectiveCamera(
     0.1,
     100
 )
-camera.position.set(-1,1.3,6)
+camera.position.set(-1,15,30)
 scene.add(camera)
 
 renderer = new THREE.WebGL1Renderer({
@@ -64,16 +72,16 @@ renderer.gammaOuput = true
 function animate(){
     requestAnimationFrame(animate);
 
-   boxMesh.rotation.y += 0.01;
-renderer.render(scene,camera);
+ // loader.rotation.y += 0.01;
 
+renderer.render(scene,camera);
 
 
 
 }
 animate()
 
-
+*/
 
 
 
@@ -115,3 +123,40 @@ function animate(){
 }
 animate()
 */
+
+
+
+
+var scene, camera, renderer;
+
+scene = new THREE.Scene();
+scene.background = new THREE.Color(0x4e4e4f)
+
+camera = new THREE.PerspectiveCamera(50, window.innerWidth/innerHeight);
+camera.position.set(100,200,1000);
+
+
+renderer = new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+
+var controls = new THREE.OrbitControls(camera,renderer.domElement);
+controls.update();
+
+var abint = new THREE.AmbientLight(0xe4e4e4,4)
+scene.add(abint)
+var loader = new THREE.GLTFLoader();
+loader.load( 'model/aventador.gltf', function (gltf){
+    gltf.scene.scale.set(30,30,30);
+    scene.add(gltf.scene);
+})
+
+
+function animate(){
+    requestAnimationFrame(animate);
+    renderer.render(scene, camera);
+    scene.rotation.y += 0.01;
+
+}
+
+animate()
