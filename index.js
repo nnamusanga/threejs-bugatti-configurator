@@ -134,7 +134,7 @@ scene = new THREE.Scene();
 scene.background = new THREE.Color(0x4e4e4f)
 
 camera = new THREE.PerspectiveCamera(50, window.innerWidth/innerHeight);
-camera.position.set(100,200,1000);
+camera.position.set(100,100,1000);
 
 
 /*
@@ -162,21 +162,44 @@ document.body.appendChild(renderer.domElement);
 */
 var controls = new THREE.OrbitControls(camera,renderer.domElement);
 controls.update();
+SetUpControls();
+
+
+//setup controls
+function SetUpControls() {
+    controls.enableRotate = true
+}
 
 var abint = new THREE.AmbientLight(0xe4e4e4,4)
 scene.add(abint)
-var loader = new THREE.GLTFLoader();
+
+var car;
+var loader = new THREE.GLTFLoader()
 loader.load( 'model/aventador.gltf', function (gltf){
-    gltf.scene.scale.set(30,30,30);
-    scene.add(gltf.scene);
+    car = gltf;
+    car.scene.scale.set(30,30,30)
+    scene.add(car.scene)
+    
+    let newMaterial = new THREE.MeshStandardMaterial({color: 0xff0000});
+    car.scene.traverse((o) => {
+        console.log(o)
+    });
+    
+    controls.target = car.scene.position
+    controls.autoRotate = true
+    controls.autoRotateSpeed = .3
+    controls.maxPolarAngle = Math.PI/2;
 })
 
 
 function animate(){
     requestAnimationFrame(animate);
-    renderer.render(scene, camera);
-    scene.rotation.y += 0.01;
 
+    //UPDATE====================================================================
+    controls.update()
+
+    //RENDEER===================================================================
+    renderer.render(scene, camera);
 }
 
 animate()
