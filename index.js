@@ -1,3 +1,4 @@
+
 /*
 var scene, camera, renderer;
 
@@ -136,10 +137,29 @@ camera = new THREE.PerspectiveCamera(50, window.innerWidth/innerHeight);
 camera.position.set(100,200,1000);
 
 
+/*
+let kendali = new Object();
+kendali.x = 1;
+kendali.y = 1;
+kendali.z = 2;
+
+let gui = new dat.GUI();
+gui.add(kendali, "x", -4,4,0.1);
+gui.add(kendali, "y", -4,4);
+gui.add(kendali, "z", -4,4);
+
+*/
+
 renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
+/*var material = new THREE.MeshStanderdMarerial({
+    color: 0xF3FFE2,
+    roughness: 0.5,
+    metalness: 0.5,
+});
+*/
 var controls = new THREE.OrbitControls(camera,renderer.domElement);
 controls.update();
 
