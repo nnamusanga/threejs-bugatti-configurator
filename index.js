@@ -170,7 +170,7 @@ SetUpControls();
 //setup controls
 function SetUpControls() {
     controls.enableRotate = true
-    //controls.enableZoom = false
+    controls.enableZoom = false
     //controls.minDistance = 0
     //controls.minDistance = 0 
     controls.enablePan = false
@@ -232,6 +232,14 @@ gloader.load( 'model/Garage/scene.gltf', function (gltf){
     garage.scene.scale.set(200,200,200)
 
     garage.scene.position.y = -13
+
+    garage.scene.traverse((o) => {
+        if(o.isMesh){
+            o.castShadow = true
+            o.receiveShadow = true
+            if(o.material.map) o.material.map.anisotropy = 16;
+        }
+    });
 
     scene.add(garage.scene)
 })

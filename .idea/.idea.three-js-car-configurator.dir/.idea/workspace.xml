@@ -20,52 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc3f0b95-af46-458a-a637-bb0d766bd16c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.car-config-master.dir/.idea/contentModel.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.car-config-master.dir/.idea/indexLayout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.car-config-master.dir/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.car-config-master.dir/.idea/projectSettingsUpdater.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.car-config-master.dir/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.car-config-master.dir/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.car-config-master.dir/riderModule.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.three-js-car-configurator.dir/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.three-js-car-configurator.dir/.idea/contentModel.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.three-js-car-configurator.dir/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.three-js-car-configurator.dir/.idea/indexLayout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.three-js-car-configurator.dir/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.three-js-car-configurator.dir/.idea/projectSettingsUpdater.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.three-js-car-configurator.dir/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.three-js-car-configurator.dir/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.three-js-car-configurator.dir/riderModule.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/AventadorAtlas_Albedo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/AventadorAtlas_Normal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Garage/scene.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Garage/scene.gltf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Garage/textures/Material_baseColor.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Garage/textures/Material_emissive.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Garage/textures/Material_normal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Garage/textures/blue_light_emissive.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Garage/textures/floor_light_emissive.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Garage/textures/white_light_emissive.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/LR_Brake_Albedo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/LR_Generic_Normal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/LR_Reverse_Albedo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/LR_Turn_Albedo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Range Rover Evoque.blend" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Range Rover Evoque.tif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Render_Tyre_0A.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Render_Tyre_0B.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/aventador.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/aventador.gltf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/meta.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/three.js-master/build/GLTFLoader.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/three.js-master/build/OrbitControls.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/three.js-master/build/dat.gui.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/three.js-master/build/three.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/three.js-master/build/three.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/three.js-master/build/three.module.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
