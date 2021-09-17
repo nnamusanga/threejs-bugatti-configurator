@@ -170,7 +170,7 @@ SetUpControls();
 //setup controls
 function SetUpControls() {
     controls.enableRotate = true
-    //controls.enableZoom = false
+    controls.enableZoom = false
     //controls.minDistance = 0
     //controls.minDistance = 0 
     controls.enablePan = false
