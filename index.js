@@ -170,7 +170,7 @@ SetUpControls();
 //setup controls
 function SetUpControls() {
     controls.enableRotate = true
-    controls.enableZoom = false
+    //controls.enableZoom = false
     //controls.minDistance = 0
     //controls.minDistance = 0 
     controls.enablePan = false
@@ -229,7 +229,7 @@ var garage;
 var gloader = new THREE.GLTFLoader()
 gloader.load( 'model/Garage/scene.gltf', function (gltf){
     garage = gltf;
-    garage.scene.scale.set(200,200,200)
+    garage.scene.scale.set(201,201,201)
 
     garage.scene.position.y = -13
 
@@ -237,10 +237,16 @@ gloader.load( 'model/Garage/scene.gltf', function (gltf){
         if(o.isMesh){
             o.castShadow = true
             o.receiveShadow = true
+            o.renderOrder = Math.random()
+            o.material.side = THREE.FrontSide
+            
             if(o.material.map) o.material.map.anisotropy = 16;
+            
+            
         }
     });
 
+    window.garage = garage
     scene.add(garage.scene)
 })
 
