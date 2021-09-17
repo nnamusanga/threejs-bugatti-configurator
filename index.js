@@ -133,8 +133,7 @@ var scene, camera, renderer;
 scene = new THREE.Scene();
 scene.background = new THREE.Color(0x4e4e4f)
 
-camera = new THREE.PerspectiveCamera(50, window.innerWidth/innerHeight);
-camera.position.set(100,100,1000);
+camera = new THREE.PerspectiveCamera(50, window.innerWidth/innerHeight, 1, 10000);
 
 
 /*
@@ -161,6 +160,7 @@ document.body.appendChild(renderer.domElement);
 });
 */
 var controls = new THREE.OrbitControls(camera,renderer.domElement);
+camera.position.set( 1000, 300, 0 );
 controls.update();
 SetUpControls();
 
@@ -168,6 +168,8 @@ SetUpControls();
 //setup controls
 function SetUpControls() {
     controls.enableRotate = true
+   // controls.minDistance = 0
+//controls.minDistance = 0 
 }
 
 var abint = new THREE.AmbientLight(0xe4e4e4,4)
@@ -187,16 +189,42 @@ loader.load( 'model/aventador.gltf', function (gltf){
     
     controls.target = car.scene.position
     controls.autoRotate = true
-    controls.autoRotateSpeed = .3
+    controls.autoRotateSpeed = 3.2
     controls.maxPolarAngle = Math.PI/2;
+    controls.enableZoom = false
 })
 
+//SURFACE=======================================================================
 
+//cube
+var geometry = new THREE.BoxGeometry(1000, 15, 600);
+//var materal = new THREE.meshBasicMaterial({color: 0x00aaff});
+var materal = new THREE.MeshLambertMaterial({color: 0x000055})
+
+var mesh = new THREE.Mesh(geometry, materal);
+
+//mesh.position.set(2,-2,-2)
+mesh.position.x = 2;
+mesh.position.y = -6;
+mesh.position.z = 2;
+
+//mesh.rotation.y = Math.PI / 2
+
+
+scene.add(mesh);
+/*
+var light = new THREE.PointLight(0xFFFFFF, 1, 500)
+light.position.set(10,0,25);
+scene.add(light);
+*/
 function animate(){
     requestAnimationFrame(animate);
 
     //UPDATE====================================================================
-    controls.update()
+    controls.update()  
+    
+    car.scene.rotation.y = Math.PI / 1
+    //controls.noZoom += true
 
     //RENDEER===================================================================
     renderer.render(scene, camera);
