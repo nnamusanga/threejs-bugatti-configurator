@@ -127,7 +127,6 @@ animate()
 
 
 
-
 var scene, camera, renderer;
 
 scene = new THREE.Scene();
@@ -151,6 +150,9 @@ gui.add(kendali, "z", -4,4);
 
 renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.toneMapping =  THREE.ReinhardToneMapping
+renderer.toneMappingExposure = 2.3
+renderer.shadowMap.enabled = true
 document.body.appendChild(renderer.domElement);
 
 /*var material = new THREE.MeshStanderdMarerial({
@@ -168,12 +170,28 @@ SetUpControls();
 //setup controls
 function SetUpControls() {
     controls.enableRotate = true
-   // controls.minDistance = 0
-//controls.minDistance = 0 
+    //controls.enableZoom = false
+    //controls.minDistance = 0
+    //controls.minDistance = 0 
+    controls.enablePan = false
 }
 
-var abint = new THREE.AmbientLight(0xe4e4e4,4)
-scene.add(abint)
+// var abint = new THREE.AmbientLight(0xe4e4e4,4)
+// scene.add(abint)
+
+var hemiLight = new THREE.HemisphereLight(0xffeeb1, 0x080820, 4)
+
+var spotLight = new THREE.SpotLight(0xffa95c,4)
+spotLight.castShadow = true;
+spotLight.shadow.bias = -0.0001
+spotLight.shadow.mapSize.width = 1024 * 4
+spotLight.shadow.mapSize.height = 1024 * 4
+
+scene.add(spotLight)
+scene.add(hemiLight)
+
+scene.add(new THREE.AxesHelper(500))
+
 
 var car;
 var loader = new THREE.GLTFLoader()
@@ -182,23 +200,30 @@ loader.load( 'model/aventador.gltf', function (gltf){
     car.scene.scale.set(30,30,30)
     scene.add(car.scene)
     
-    let newMaterial = new THREE.MeshStandardMaterial({color: 0xff0000});
+    //let newMaterial = new THREE.MeshStandardMaterial({color: 0xff0000});
+    
     car.scene.traverse((o) => {
-        console.log(o)
+        if(o.isMesh){
+            o.castShadow = true
+            o.receiveShadow = true
+            if(o.material.map) o.material.map.anisotropy = 16;
+        }
     });
+    
+    // car.scene.children[0].children[2].children[0].material = newMaterial
+    // car.scene.children[0].children[2].children[1].material = newMaterial
     
     controls.target = car.scene.position
     controls.autoRotate = true
-    controls.autoRotateSpeed = 3.2
+    controls.autoRotateSpeed = 1
     controls.maxPolarAngle = Math.PI/2;
-    controls.enableZoom = false
+    
+    window.gltfObject = car.scene
 })
 
 //SURFACE=======================================================================
-
 //cube
 var geometry = new THREE.BoxGeometry(1000, 15, 600);
-//var materal = new THREE.meshBasicMaterial({color: 0x00aaff});
 var materal = new THREE.MeshLambertMaterial({color: 0x000055})
 
 var mesh = new THREE.Mesh(geometry, materal);
@@ -224,6 +249,11 @@ function animate(){
     controls.update()  
     
     car.scene.rotation.y = Math.PI / 1
+    spotLight.position.set(
+        camera.position.x + 10,
+        camera.position.y + 10,
+        camera.position.z + 10
+    )
     //controls.noZoom += true
 
     //RENDEER===================================================================
