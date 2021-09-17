@@ -197,7 +197,7 @@ var car;
 var loader = new THREE.GLTFLoader()
 loader.load( 'model/aventador.gltf', function (gltf){
     car = gltf;
-    car.scene.scale.set(30,30,30)
+    car.scene.scale.set(40,40,40)
     scene.add(car.scene)
     
     //let newMaterial = new THREE.MeshStandardMaterial({color: 0xff0000});
@@ -216,32 +216,48 @@ loader.load( 'model/aventador.gltf', function (gltf){
     controls.target = car.scene.position
     controls.autoRotate = true
     controls.autoRotateSpeed = 1
-    controls.maxPolarAngle = Math.PI/2;
+    controls.maxPolarAngle = Math.PI/2.05;
     
     window.gltfObject = car.scene
 })
 
+
+//GARAGE========================================================================
+
+
+var garage;
+var gloader = new THREE.GLTFLoader()
+gloader.load( 'model/Garage/scene.gltf', function (gltf){
+    garage = gltf;
+    garage.scene.scale.set(200,200,200)
+
+    garage.scene.position.y = -13
+
+    scene.add(garage.scene)
+})
+
+
 //SURFACE=======================================================================
 //cube
-var geometry = new THREE.BoxGeometry(1000, 15, 600);
-var materal = new THREE.MeshLambertMaterial({color: 0x000055})
+// var geometry = new THREE.BoxGeometry(1000, 15, 600);
+// var materal = new THREE.MeshLambertMaterial({color: 0x000055})
 
-var mesh = new THREE.Mesh(geometry, materal);
+// var mesh = new THREE.Mesh(geometry, materal);
 
-//mesh.position.set(2,-2,-2)
-mesh.position.x = 2;
-mesh.position.y = -6;
-mesh.position.z = 2;
+// //mesh.position.set(2,-2,-2)
+// mesh.position.x = 2;
+// mesh.position.y = -6;
+// mesh.position.z = 2;
 
-//mesh.rotation.y = Math.PI / 2
+// //mesh.rotation.y = Math.PI / 2
 
 
-scene.add(mesh);
-/*
-var light = new THREE.PointLight(0xFFFFFF, 1, 500)
-light.position.set(10,0,25);
-scene.add(light);
-*/
+// scene.add(mesh);
+// /*
+// var light = new THREE.PointLight(0xFFFFFF, 1, 500)
+// light.position.set(10,0,25);
+// scene.add(light);
+// */
 function animate(){
     requestAnimationFrame(animate);
 
