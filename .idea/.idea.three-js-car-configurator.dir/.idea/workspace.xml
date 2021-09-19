@@ -20,13 +20,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc3f0b95-af46-458a-a637-bb0d766bd16c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/LoadAventador.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RectAreaLightUniformsLib.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/env/asphalt_albedo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/env/asphalt_normal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/env/asphalt_rouphness.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/env/cubemap/negx.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/env/cubemap/negy.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/env/cubemap/negz.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/env/cubemap/posx.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/env/cubemap/posy.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/env/cubemap/posz.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/env/fake_shadow.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.three-js-car-configurator.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.three-js-car-configurator.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -35,8 +56,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/js/script.js" />
+        <option value="$PROJECT_DIR$/model/LoadAventador.js" />
+        <option value="$PROJECT_DIR$/styles.css" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/index.js" />
+        <option value="$PROJECT_DIR$/LoadAventador.js" />
       </list>
     </option>
   </component>
@@ -82,5 +106,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1366" y="33" width="983" height="756" maximized="true" key="dock-window-1" timestamp="1632060745520">
+      <screen x="-1366" y="0" width="1366" height="768" />
+    </state>
+    <state x="-1366" y="33" width="983" height="756" maximized="true" key="dock-window-1/0.0.1366.768/-1366.0.1366.768@0.0.1366.768" timestamp="1632060745520" />
   </component>
 </project>
