@@ -35,7 +35,7 @@ function SetUpControls()
     controls.minPolarAngle = 0.75; //Uper
     controls.maxPolarAngle = 1.6; //Lower
     controls.dampingFactor = 0.07;
-    controls.rotateSpeed = 0.07;
+    controls.rotateSpeed = 5;
     controls.minDistance = 16
     controls.maxDistance = 32;
     controls.autoRotate = true;

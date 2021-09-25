@@ -400,3 +400,325 @@ function CreateAreaLight(scene, color, intensity, size, visible)
     return rectLight;
 }
 
+
+
+/*------------------------------------------------------------
+                CONFIGURATION PALETTE
+ -----------------------------------------------------------*/
+
+//Function to load the configurration palette
+function LoadConfigurator(mConfigJSON)
+{
+    //The config palette element
+    var config_palette = $([
+    '<div class="configurator-palette">',
+        '<div class="options-palette">',
+            '<nav class="nav-config">',
+                '<ul>',
+                    '<li>',
+                        '<a class="nav-config-item" data-id="body_colors">',
+                            '<span>BODY COLOR</span>',
+                        '</a>',
+                    '</li>',
+                    '<li>',
+                        '<a class="nav-config-item" data-id="mirror_colors">',
+                            '<span>SIDE MIRRORS</span>',
+                        '</a>',
+                    '</li>',
+                    '<li>',
+                        '<a class="nav-config-item" data-id="wheel_designs">',
+                            '<span>WHEELS</span>',
+                        '</a>',
+                    '</li>',
+                    '<li>',
+                        '<a class="nav-config-item" data-id="wheel_colors">',
+                            '<span>WHEEL COLOR</span>',
+                        '</a>',
+                    '</li>',
+                    '<li >',
+                        '<a class="nav-config-item" data-id="caliper_colors">',
+                            '<span>CALIPERS</span>',
+                        '</a>',
+                    '</li>',
+                '</ul>',
+            '</nav>',
+            '<div class="palette-container">',
+                '<div id="body_colors" class="palette-content">',  
+                    '<ul>',
+                    '</ul>',
+                '</div>',
+
+                '<div id="mirror_colors" class="palette-content">',
+                    '<ul>',                
+                    '</ul>',
+                '</div>',
+
+                '<div id="wheel_designs" class="palette-content">',
+                    '<ul>',
+                    '</ul>',
+                '</div>',
+
+                '<div id="wheel_colors" class="palette-content">',
+                    '<ul>',
+                    '</ul>',
+                '</div>',
+
+                '<div id="caliper_colors" class="palette-content">',
+                    '<ul>',
+                    '</ul> ',
+                '</div>',
+            '</div>',
+        '</div>',
+
+     '</div>'].join(''));
+
+    //Append the cofigurator palette to body
+    $('body').append(config_palette);   
+
+    //Upon clicking the config tab
+    $('.nav-config-item',config_palette).click(function()
+    {
+        //Get the clicked tab id
+        var configID = $(this).data('id');  
+
+        //If the palette is already active
+        if($(this).hasClass("active"))
+        {
+            //Empty the container
+            $('#'+configID+" ul",config_palette).empty();
+            $(this).removeClass('active');
+            //Do not execute further
+            return;
+        }
+
+        //Deactivate all config tab links
+        $('.nav-config-item',config_palette).removeClass('active');
+        //Hide all config tab contents
+        $('.palette-content',config_palette).hide();                       
+        
+        //Add object/texture swatch if wheel design
+        if(configID=='wheel_designs')     
+        {
+            AddTextureSwatches($('#'+configID+" ul",config_palette),mConfigJSON[configID],function(targetName)
+            {
+                //Set the corresponding entity object visible
+                SetEntityVisible(mC3DGLTF.scene,targetName);
+
+            });
+        }
+        //Add the color swatches
+        else                
+        { 
+            AddColorSwatches($('#'+configID+" ul",config_palette), mConfigJSON[configID], (configID =='mirror_colors') ? mCBodyColor: null, function(color, targetMat)
+            {                   
+                //Set the corresponding entity color
+                SetEntityColor(color, targetMat);
+                //If changed body color, change mirror color cover also
+                if(targetMat=='Mt_Body')
+                    SetEntityColor(color,'Mt_MirrorCover');
+
+            });
+        }
+                 
+        //Set the current clicked tab active
+        $('.nav-config-item[data-id="'+configID+'"]',config_palette).addClass("active");
+        //Show the clicked palette conent
+        $('#'+configID, config_palette).show();     
+    });    
+    
+}
+
+//Function to add color swatches
+function AddColorSwatches(container, configEntity, def, onClickCallback)
+{		
+	//Empty the container
+	$(container).empty();
+
+	//Get the color array
+	var colorList = configEntity.colors.slice(0);;
+
+	//If default color available
+	if(def)
+		colorList.unshift({"name":"Current","value":def});
+
+	//Loop through each colors for config entity
+	for(var i=0;i<colorList.length;i++)
+	{
+		var colorSwatch = $('<li><button class="color-swatch"><span>'+colorList[i].name+'</span></button></li>');            
+		//Set the color swatch
+	 	$('button', colorSwatch).css({"background":colorList[i].value});	
+		//Trigger the callback with data on clicking swatch button
+	 	$('button',colorSwatch).click(function(color, target) { return function(){onClickCallback(color,target)};}(colorList[i].value,configEntity.target));
+	 	//Add the color swatch to corresponding container
+	 	$(container).append(colorSwatch);
+	}	
+}
+
+//Function to add texture swatches
+function AddTextureSwatches(container, configEntity, onClickCallback)
+{	
+	//Empty the container
+	$(container).empty();
+
+	//Loop through each entry in config entity
+	for(var i=0;i<configEntity.designs.length;i++)
+	{
+		var url="data/aventador/"+configEntity.designs[i].thumb;
+		//Create the texture swatch object
+		var textureSwatch = $('<li><button class="texture-swatch"><span>'+configEntity.designs[i].name+'</span></button></li>');
+		$('button',textureSwatch).css({'background-image':'url('+url+')'});
+		//Trigger the callback with data on clicking swatch button
+		$('button', textureSwatch).click(function(targetName){return function(){onClickCallback(targetName);};}(configEntity.designs[i].value));
+		//Add the texture swatch to corresponding container
+		$(container.append(textureSwatch));
+	}
+}
+
+//Function to set the color of an entityt
+function SetEntityColor(color, targetMat)
+{		
+	mC3DGLTF.scene.traverse(function(obj)
+    {
+        if(obj instanceof THREE.Mesh)
+        {
+            if(obj.material.name == targetMat)
+            {                
+                //Set the material color
+                obj.material.color.setHex(webColorToHex(color));
+
+                //Cache if current body color changed
+                if(targetMat == 'Mt_Body')
+                	mCBodyColor = color;
+
+                //Return after changing one material
+                return;
+            }
+        }
+    });
+}
+
+//Function to set the entity visibility
+function SetEntityVisible(nodeObject, targetName)
+{
+	//Traverse through the object
+	nodeObject.traverse(function(object)
+	{
+		//If this is a rim object
+		if(object.name.includes('Obj_Rim'))
+		{
+			//Show if name matches target, else hide it
+			if(object.name.includes(targetName))
+				object.visible=true;
+			else
+				object.visible=false;
+		}
+		
+	});
+}
+
+
+//Function to set orbit camera as new camera
+function SetOrbitCamera()
+{
+    //Create new orbit controls
+    mOrbitControls = new THREE.OrbitControls(mOrbitCamera,mRenderer.domElement);
+    mOrbitControls.target = mOrbitCamTarget;
+    mOrbitControls.enablePan = false;
+    mOrbitControls.enableZoom = true; 
+    mOrbitControls.enableDamping = true;
+    mOrbitControls.minPolarAngle = 0.75; //Uper
+    mOrbitControls.maxPolarAngle = 1.6; //Lower
+    mOrbitControls.dampingFactor = 0.07;
+    mOrbitControls.rotateSpeed = 0.07;
+    mOrbitControls.minDistance = 16
+    mOrbitControls.maxDistance = 32;
+    mOrbitControls.autoRotate = true;
+    mOrbitControls.autoRotateSpeed = 0.05;
+
+    //Set orbit camera as main camera
+    mMainCamera = mOrbitCamera;
+
+    //Recalculate context
+    OnContextResized();
+}
+
+/*------------------------------------------------------------
+                        HELPER FUNCTIONS
+ -----------------------------------------------------------*/
+//Function to create an area light
+function CreateAreaLight(scene, color, intensity, size, visible)
+{
+    //Create an area light with parameters
+    var rectLight = new THREE.RectAreaLight( color, intensity, size.x, size.y );    
+    //Add the ligh to the scene
+    scene.add( rectLight );
+
+    //Add visibility and back mesh if required
+    if(visible)
+    {
+        var rectLightMesh = new THREE.Mesh( new THREE.PlaneBufferGeometry(), new THREE.MeshBasicMaterial() );
+        rectLightMesh.scale.x = rectLight.width;
+        rectLightMesh.scale.y = rectLight.height;
+        rectLight.add( rectLightMesh );
+
+        var rectLightMeshBack = new THREE.Mesh( new THREE.PlaneBufferGeometry(), new THREE.MeshBasicMaterial( { color: 0x080808 } ) );
+        rectLightMeshBack.rotation.y = Math.PI;
+        rectLightMesh.add( rectLightMeshBack );
+    }
+
+    //Return the created light
+    return rectLight;
+}
+
+ //Function to convert vector3 from degree to radian
+ function Vector3DegToRadian(_vector3)
+{
+    //The per dgree converter
+    var degree = Math.PI/180;
+    //Return the new vector3 in radian
+    return  new THREE.Euler(_vector3.x*degree, _vector3.y * degree, _vector3.z * degree, 'XYZ');
+}
+
+//Function to convert points from right hand to left hand coordinate system
+function CoordR2L(_point)
+{
+    //Swap Y and Z with Z=-Y
+    return { x:_point.x, y:_point.z, z:-_point.y };
+}
+
+//Function to get the distance between two Vector3
+function distanceVector( V3A, V3Bs )
+{
+    //Get the vector3 values delta
+    var deltaX = V3A.x - V3Bs.x;
+    var deltaY = V3A.y - V3Bs.y;
+    var deltaZ = V3A.z - V3Bs.z;
+    
+    //Return the calculated distance
+    return Math.sqrt( deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ );
+}
+
+//Function to load texture corrected
+function LoadTextureCorrected(_loader, _path)
+{
+    //Load the texture
+    var texture = _loader.load(_path);
+    //Set repeat wrapping
+    texture.wrapT = texture.wrapS = THREE.RepeatWrapping;
+    //Flip texture vertically
+    texture.repeat.y    = - 1;
+    //Return the corrected texture
+    return texture;
+}
+
+//Function to convert webcolor to hex color
+function webColorToHex(color)
+{
+	return parseInt(color.replace("#","0x"));
+}
+
+//Function to get a random int (min,max inclusive)
+function getRandomInt(min, max) 
+{
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
