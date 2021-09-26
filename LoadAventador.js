@@ -281,22 +281,22 @@ function SetupEnvironment(scene,manager,urls, textureLoader)
     var lWidth = 12, lHeight = 6;
 
     //Add a front light
-    var mFrontLight = CreateAreaLight(scene, color, intensity, new THREE.Vector2(lWidth,lHeight), true);
+    var mFrontLight = CreateAreaLight(scene, color, intensity, new THREE.Vector2(lWidth,lHeight), false);
     mFrontLight.rotation.copy(Vector3DegToRadian({x:90, y:45, z:-90}));
     mFrontLight.position.copy(new THREE.Vector3( -26, 16, 0 ));
 
     //Add a back light
-    var mBackLight = CreateAreaLight(scene, color, intensity, new THREE.Vector2(lWidth,lHeight), true);
+    var mBackLight = CreateAreaLight(scene, color, intensity, new THREE.Vector2(lWidth,lHeight), false);
     mBackLight.rotation.copy(Vector3DegToRadian({x:90, y:-45, z:90}));
     mBackLight.position.copy(new THREE.Vector3( 26, 16, 0 ));
 
     //Add a Right Light
-    var mRightLight = CreateAreaLight(scene, color, intensity, new THREE.Vector2(lWidth,lHeight), true);
+    var mRightLight = CreateAreaLight(scene, color, intensity, new THREE.Vector2(lWidth,lHeight), false);
     mRightLight.rotation.copy(Vector3DegToRadian({x:135, y:0, z:180}));
     mRightLight.position.copy(new THREE.Vector3(0,16,18));
 
     //Add a left Light
-    var mLeftLight = CreateAreaLight(scene, color, intensity, new THREE.Vector2(lWidth,lHeight), true);
+    var mLeftLight = CreateAreaLight(scene, color, intensity, new THREE.Vector2(lWidth,lHeight), false);
     mLeftLight.rotation.copy(Vector3DegToRadian({x:45, y:0, z:0}));
     mLeftLight.position.copy(new THREE.Vector3(0,16,-18));
 
@@ -502,7 +502,7 @@ function LoadConfigurator(mConfigJSON)
             AddTextureSwatches($('#'+configID+" ul",config_palette),mConfigJSON[configID],function(targetName)
             {
                 //Set the corresponding entity object visible
-                SetEntityVisible(mC3DGLTF.scene,targetName);
+                SetEntityVisible(car.scene,targetName);
 
             });
         }
@@ -577,7 +577,7 @@ function AddTextureSwatches(container, configEntity, onClickCallback)
 //Function to set the color of an entityt
 function SetEntityColor(color, targetMat)
 {		
-	mC3DGLTF.scene.traverse(function(obj)
+	car.scene.traverse(function(obj)
     {
         if(obj instanceof THREE.Mesh)
         {

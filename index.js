@@ -35,7 +35,7 @@ function SetUpControls()
     controls.minPolarAngle = 0.75; //Uper
     controls.maxPolarAngle = 1.6; //Lower
     controls.dampingFactor = 0.07;
-    controls.rotateSpeed = 5;
+    controls.rotateSpeed = .7;
     controls.minDistance = 16
     controls.maxDistance = 32;
     controls.autoRotate = true;
@@ -58,8 +58,6 @@ function OnContextResized()
 
 
 
-scene.add(new THREE.AxesHelper(500))
-
 Initialize()
 
 
@@ -78,6 +76,8 @@ function Initialize() {
         LoadAventador(jsonConfig, scene,controls);
 
         SetUpControls();
+        
+        LoadConfigurator(jsonConfig)
         
     });
     
