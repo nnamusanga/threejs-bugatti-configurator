@@ -19,15 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc3f0b95-af46-458a-a637-bb0d766bd16c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.three-js-car-configurator.dir/.idea/contentModel.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.three-js-car-configurator.dir/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.three-js-car-configurator.dir/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.three-js-car-configurator.dir/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.three-js-car-configurator.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.three-js-car-configurator.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.three-js-car-configurator.dir/riderModule.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoadAventador.js" beforeDir="false" afterPath="$PROJECT_DIR$/LoadAventador.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="dc3f0b95-af46-458a-a637-bb0d766bd16c" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,7 +78,7 @@
       <updated>1631587510345</updated>
       <workItem from="1631587524438" duration="3110000" />
       <workItem from="1632568748541" duration="2875000" />
-      <workItem from="1632684319603" duration="520000" />
+      <workItem from="1632684319603" duration="1201000" />
     </task>
     <servers />
   </component>
