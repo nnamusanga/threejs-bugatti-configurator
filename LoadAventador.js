@@ -182,7 +182,7 @@
     // Load a glTF resource
     gltfLoader.load(
         // resource URL
-        'model/aventador.gltf',
+        'model/scene.gltf',
         // called when the resource is loaded
         function (gltf) {
             //Take areference of the current gltf model
@@ -243,13 +243,19 @@
                 if (obj.name.includes('Obj_Rim') && !obj.name.includes(config.wheel_designs.designs[0].value))
                     obj.visible = false;
             });
+            
+            car.scene.position.set(-15, 0, -6)
+            
+            car.scene.scale.set(0.16,.16,.16)
+            car.scene.rotation.set(0,Math.PI/-2,0)
 
-            
-            
+
+
+
             //Add the gltf object to the scene
             scene.add(car.scene);
 
-            controls.target = car.scene.position
+            controls.target = new THREE.Vector3(0,0,0)
             controls.autoRotate = true
             controls.autoRotateSpeed = 1
             controls.maxPolarAngle = Math.PI / 2.05;
@@ -267,7 +273,7 @@
 function SetupEnvironment(scene,manager,urls, textureLoader)
 {
     //Create and add an ambient light
-    var ambientLight = new THREE.AmbientLight( 0xffffff, .3 );
+    var ambientLight = new THREE.AmbientLight( 0xffffff, 1 );
     scene.add( ambientLight );
 
     //Light Size

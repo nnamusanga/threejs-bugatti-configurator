@@ -19,7 +19,122 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dc3f0b95-af46-458a-a637-bb0d766bd16c" name="Default Changelist" comment="" />
+    <list default="true" id="dc3f0b95-af46-458a-a637-bb0d766bd16c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/model/license.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/scene.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/scene.gltf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_badge_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_badge_cp_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_body_1_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_body_2_6_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_body_2_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_body_3_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_brake_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_bump_leather_71_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_bump_leather_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_bump_plastic_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_bump_stitching_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_caliper_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_carbon_fiber_7_baseColor.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_carbon_fiber_8_baseColor.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_carbon_fiber_baseColor.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_chrome_2_15_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_chrome_2_16_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_chrome_2_17_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_chrome_2_18_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_chrome_2_19_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_chrome_2_20_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_chrome_2_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_chrome_81_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_chrome_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_cloth_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_detail_glass_clear_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_digital_gauge_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_emblem_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_frame_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_gauge_emissive_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_gauge_needle_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_grille1_alpha_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_head_light_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_headliner_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_hub_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_inner_rim_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_leather_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_lights_glass_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_lights_glass_metallicRoughness.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_matte_colors_10_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_matte_colors_11_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_matte_colors_12_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_matte_colors_9_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_matte_colors_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_metal_77_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_metal_78_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_metal_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_metal_metallicRoughness.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_mirrorLeft_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_mirrorMiddle_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_mirrorRight_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_misc_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_mottled_79_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_mottled_80_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_mottled_87_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_mottled_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_plastic2_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_plastic_88_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_plastic_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_reflector_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_reflector_cp_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_reverse_light_lod0_29_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_reverse_light_lod0_30_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_reverse_light_lod0_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_rim_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_rubber_trim_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_solid_89_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_solid_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_tail_light_lod0_31_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_tail_light_lod0_32_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_tail_light_lod0_35_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_tail_light_lod0_36_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_tail_light_lod0_37_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_tail_light_lod0_38_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_tail_light_lod0_39_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_tail_light_lod0_40_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_tail_light_lod0_41_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_tail_light_lod0_42_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_tail_light_lod0_43_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_tail_light_lod0_44_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_tail_light_lod0_45_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_tail_light_lod0_46_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_tail_light_lod0_47_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_tail_light_lod0_48_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_tail_light_lod0_49_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_tail_light_lod0_50_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_tail_light_lod0_55_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_tail_light_lod0_56_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_tail_light_lod0_57_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_tail_light_lod0_62_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_tail_light_lod0_63_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_tail_light_lod0_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_textured_reflector_22_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_textured_reflector_25_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_textured_reflector_59_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_textured_reflector_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_tire_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_undercarriage_baseColor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/textures/Veyron_SS_weatherstrip_baseColor.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.three-js-car-configurator.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.three-js-car-configurator.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LoadAventador.js" beforeDir="false" afterPath="$PROJECT_DIR$/LoadAventador.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/AventadorAtlas_Albedo.png" beforeDir="false" afterPath="$PROJECT_DIR$/model/AventadorAtlas_Albedo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/AventadorAtlas_Normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/model/AventadorAtlas_Normal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/LR_Brake_Albedo.png" beforeDir="false" afterPath="$PROJECT_DIR$/model/LR_Brake_Albedo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/LR_Reverse_Albedo.png" beforeDir="false" afterPath="$PROJECT_DIR$/model/LR_Reverse_Albedo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/LR_Turn_Albedo.png" beforeDir="false" afterPath="$PROJECT_DIR$/model/LR_Turn_Albedo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Range Rover Evoque.blend" beforeDir="false" afterPath="$PROJECT_DIR$/model/Range Rover Evoque.blend" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Range Rover Evoque.tif" beforeDir="false" afterPath="$PROJECT_DIR$/model/Range Rover Evoque.tif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/aventador.bin" beforeDir="false" afterPath="$PROJECT_DIR$/model/aventador.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/lamborghini_centenario_lp-770_baby_blue_sdc.zip" beforeDir="false" afterPath="$PROJECT_DIR$/model/lamborghini_centenario_lp-770_baby_blue_sdc.zip" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,6 +194,9 @@
       <workItem from="1631587524438" duration="3110000" />
       <workItem from="1632568748541" duration="2875000" />
       <workItem from="1632684319603" duration="1201000" />
+      <workItem from="1632774074533" duration="352000" />
+      <workItem from="1633289484621" duration="20000" />
+      <workItem from="1634224117313" duration="3751000" />
     </task>
     <servers />
   </component>

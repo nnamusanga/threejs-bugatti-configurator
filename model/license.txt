@@ -1,0 +1,11 @@
+Model Information:
+* title:	Bugatti Veyron 16.4 Super Sport
+* source:	https://sketchfab.com/3d-models/bugatti-veyron-164-super-sport-8928a6a2bda541fd8a06da3b990633ad
+* author:	DJS (https://sketchfab.com/s.jailen.jones)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Bugatti Veyron 16.4 Super Sport" (https://sketchfab.com/3d-models/bugatti-veyron-164-super-sport-8928a6a2bda541fd8a06da3b990633ad) by DJS (https://sketchfab.com/s.jailen.jones) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

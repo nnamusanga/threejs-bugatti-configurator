@@ -32,12 +32,12 @@ function SetUpControls()
     controls.enablePan = false;
     controls.enableZoom = true;
     controls.enableDamping = true;
-    controls.minPolarAngle = 0.75; //Uper
-    controls.maxPolarAngle = 1.6; //Lower
+    // controls.minPolarAngle = 0.75; //Uper
+    // controls.maxPolarAngle = 1.6; //Lower
     controls.dampingFactor = 0.07;
     controls.rotateSpeed = .7;
-    controls.minDistance = 16
-    controls.maxDistance = 32;
+    // controls.minDistance = 16
+    // controls.maxDistance = 32;
     controls.autoRotate = true;
     controls.autoRotateSpeed = 0.05;
 
