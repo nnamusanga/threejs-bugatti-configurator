@@ -18,6 +18,25 @@
     ],
     "target":"Mt_Body"
   },
+
+
+  "body_colors 2":
+  {
+    "colors":
+    [
+      
+      {
+        "name":"Black",
+        "value":"#000000"
+      },
+      {
+        "name":"Orenge",
+        "value":"#FF5F00"
+      }
+    ],
+    "target":"Mt_Body2"
+  },
+  
   "mirror_colors":
   {
     "colors":

@@ -37,6 +37,9 @@
     
     var txt_Veyron_SS_rim_baseColor = LoadTextureCorrected(textureLoader, "model/textures/Veyron_SS_rim_baseColor.png")
     var txt_Veyron_SS_carbon_fiber_7_baseColor = LoadTextureCorrected(textureLoader, "model/textures/Veyron_SS_carbon_fiber_7_baseColor.jpeg")
+    var txt_Veyron_SS_body_2_baseColor = LoadTextureCorrected(textureLoader, "model/textures/Veyron_SS_body_2_baseColor.png")
+    var txt_Veyron_SS_body_1_baseColor = LoadTextureCorrected(textureLoader, "model/textures/Veyron_SS_body_1_baseColor.png")
+    var txt_Veyron_SS_caliper_baseColor = LoadTextureCorrected(textureLoader, "model/textures/Veyron_SS_caliper_baseColor.png")
 
     //Create the necessary materials
     //#region Previous work
@@ -204,7 +207,45 @@
         map: txt_Veyron_SS_carbon_fiber_7_baseColor
 
     });
-    
+
+    var Mt_Body2 = new THREE.MeshPhysicalMaterial({
+        name: 'Mt_Body2',
+        color: 0xFF5F00,
+        roughness: 0.3,
+        metalness: 0.2,
+        clearcoat: 0.05,
+        clearcoatRoughness: 0.05,
+        envMap: mCubeMap,
+        reflectivity:.1,
+        map: txt_Veyron_SS_body_1_baseColor
+
+    });
+
+    var Mt_Body3 = new THREE.MeshPhysicalMaterial({
+        name: 'Mt_Body3',
+        color: 0xFF5F00,
+        roughness: 0.3,
+        metalness: 0.2,
+        clearcoat: 0.05,
+        clearcoatRoughness: 0.05,
+        envMap: mCubeMap,
+        reflectivity:.1,
+        map: txt_Veyron_SS_body_1_baseColor
+
+    });
+
+    var Merged = new THREE.MeshPhysicalMaterial({
+        name: 'Merged',
+        color: 0xE70014,
+        roughness: 0.3,
+        metalness: 0.2,
+        clearcoat: 0.05,
+        clearcoatRoughness: 0.05,
+        envMap: mCubeMap,
+        reflectivity:.1,
+        map: txt_Veyron_SS_caliper_baseColor
+
+    });
     //The gltf object loader
     var gltfLoader = new THREE.GLTFLoader(manager);
 
@@ -270,6 +311,16 @@
                     if(obj.material.name == "Veyron_SS_carbon_fiber"){
                         obj.material = Mt_Body
                     }
+                    if(obj.material.name == "Veyron_SS_body_2_4"){
+                        obj.material = Mt_Body2
+                    }
+                    if(obj.material.name == "Veyron_SS_body"){
+                        obj.material = Mt_Body3
+                    }
+                    if(obj.material.name == "Veyron_SS_caliper"){
+                        obj.material = Merged
+                    }
+                    
 
 
                 }
@@ -462,6 +513,12 @@ function LoadConfigurator(mConfigJSON)
                             '<span>BODY COLOR</span>',
                         '</a>',
                     '</li>',
+            
+                    '<li>',
+                        '<a class="nav-config-item" data-id="body_colors 2">',
+                              '<span>BODY COLOR 2</span>',
+                         '</a>',
+                    '</li>',
                     '<li>',
                         '<a class="nav-config-item" data-id="wheel_colors">',
                             '<span>WHEEL COLOR</span>',
@@ -478,6 +535,12 @@ function LoadConfigurator(mConfigJSON)
                 '<div id="body_colors" class="palette-content">',  
                     '<ul>',
                     '</ul>',
+                '</div>',
+
+             '<div class="palette-container">',
+                 '<div id="body_colors 2" class="palette-content">',
+                     '<ul>',
+                      '</ul>',
                 '</div>',
 
                 '<div id="mirror_colors" class="palette-content">',
@@ -550,6 +613,16 @@ function LoadConfigurator(mConfigJSON)
                     SetEntityColor(color,'Mt_MirrorCover');
 
             });
+        
+        AddColorSwatches($('#'+configID+" ul",config_palette), mConfigJSON[configID], (configID =='mirror_colors') ? mCBodyColor: null, function(color, targetMat)
+        {
+            //Set the corresponding entity color
+            SetEntityColor(color, targetMat);
+            //If changed body color, change mirror color cover also
+            if(targetMat=='Mt_Body2')
+                SetEntityColor(color,'Mt_MirrorCover');
+
+        });
         }
                  
         //Set the current clicked tab active
