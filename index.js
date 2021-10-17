@@ -1,6 +1,7 @@
 var scene, camera, renderer;
 
 scene = new THREE.Scene();
+scene.background = new THREE.Color( 0x000000 );
 
 camera = new THREE.PerspectiveCamera(50, window.innerWidth/innerHeight, 1, 10000);
 
@@ -11,8 +12,9 @@ renderer.shadowMap.enabled = true
 renderer.shadowMap.type = THREE.PCFSoftShadowMap
 renderer.setClearColor( 0x000000, 1 )
 renderer.sortObjects = false
-renderer.toneMappingExposure = 2
 renderer.toneMapping = THREE.ACESFilmicToneMapping
+renderer.outputEncoding = THREE.sRGBEncoding;
+renderer.toneMappingExposure = 1;
 
 document.body.appendChild(renderer.domElement)
 

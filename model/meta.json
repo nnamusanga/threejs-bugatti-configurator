@@ -2,15 +2,7 @@
   "body_colors":
   {
     "colors":
-    [    
-      {
-        "name":"Arancio Atlas",
-        "value":"#F77F21"
-      },
-      {
-        "name":"Arancio Argos",
-        "value":"#FC4705"
-      },
+    [
       {
         "name":"Blu Cepheus",
         "value":"#4393E6"
@@ -58,16 +50,16 @@
     "colors":
     [
       {
-        "name":"Black",
-        "value":"#000000"
-      },
-      {
         "name":"Grey",
         "value":"#4C5457"
       },
       {
         "name":"Metalic",
         "value":"#dddddd"
+      },
+      {
+        "name":"Orange",
+        "value":"#FF5F00"
       }
     ],
     "target":"Mt_AlloyWheels"

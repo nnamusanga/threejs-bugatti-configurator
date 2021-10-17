@@ -16,7 +16,7 @@
 
     SetupEnvironment(scene,manager,urls, textureLoader)
 
-    var stpIndex = 3;//getRandomInt(0,config.body_colors.colors.length-1);
+    var stpIndex = 2;
 
     //Choose a random body color
     mCBodyColor = config.body_colors.colors[stpIndex].value;
@@ -33,8 +33,14 @@
     var LR_Turn_Albedo = LoadTextureCorrected(textureLoader, "model/LR_Turn_Albedo.png");
     var LR_Reverse_Albedo = LoadTextureCorrected(textureLoader, "model/LR_Reverse_Albedo.png");
     var LR_Generic_Normal = LoadTextureCorrected(textureLoader, "model/LR_Generic_Normal.png");
+    
+    
+    var txt_Veyron_SS_rim_baseColor = LoadTextureCorrected(textureLoader, "model/textures/Veyron_SS_rim_baseColor.png")
+    var txt_Veyron_SS_carbon_fiber_7_baseColor = LoadTextureCorrected(textureLoader, "model/textures/Veyron_SS_carbon_fiber_7_baseColor.jpeg")
 
     //Create the necessary materials
+    //#region Previous work
+    
     var Mt_Abs_Black_Gloss = new THREE.MeshPhysicalMaterial({
         color: 0x000000,
         roughness: 0.0,
@@ -53,14 +59,7 @@
         metalness: 0.0,
         envMap: mCubeMap
     });
-    var Mt_AlloyWheels = new THREE.MeshPhysicalMaterial({
-        name: 'Mt_AlloyWheels',
-        color: dfCol_Alloys,
-        roughness: 0.1,
-        metalness: 0.5,
-        envMap: mCubeMap
-    });
-
+  
     var Mt_AventadorAtlas = new THREE.MeshPhysicalMaterial({
         color: 0xffffff,
         roughness: 0.5,
@@ -70,15 +69,7 @@
         transparent: true
     });
 
-    var Mt_Body = new THREE.MeshPhysicalMaterial({
-        name: 'Mt_Body',
-        color: dfCol_Body,
-        roughness: 0,
-        metalness: 0.1,
-        envMap: mCubeMap,
-        reflectivity:.1,
-        clearcoatRoughness:0
-    });
+
     var Mt_BrakeCaliper = new THREE.MeshPhysicalMaterial({
         name: 'Mt_BrakeCaliper',
         color: dfCol_Caliper,
@@ -176,6 +167,44 @@
         opacity: 0.25
     });
 
+    //#endregion
+    
+    var mat_Veyron_SS_rim = new THREE.MeshPhysicalMaterial({
+        name: "Veyron_SS_rim",
+        color: 0xFFFFFF,
+        roughness: 0.0,
+        metalness: 0.0,
+        envMap: mCubeMap,
+        map: txt_Veyron_SS_rim_baseColor,
+        transparent: true,
+        opacity: 1
+    })
+
+
+    var Mt_AlloyWheels = new THREE.MeshPhysicalMaterial({
+        name: 'Mt_AlloyWheels',
+        color: dfCol_Alloys,
+        roughness: 0.0,
+        metalness: 0.0,
+        envMap: mCubeMap,
+        opacity: 1,
+        map: txt_Veyron_SS_rim_baseColor,
+    });
+    
+
+    var Mt_Body = new THREE.MeshPhysicalMaterial({
+        name: 'Mt_Body',
+        color: dfCol_Body,
+        roughness: 0.3,
+        metalness: 0.2,
+         clearcoat: 0.05,
+         clearcoatRoughness: 0.05,
+        envMap: mCubeMap,
+        reflectivity:.1,
+        map: txt_Veyron_SS_carbon_fiber_7_baseColor
+
+    });
+    
     //The gltf object loader
     var gltfLoader = new THREE.GLTFLoader(manager);
 
@@ -234,6 +263,13 @@
                         obj.material = Mt_Tyres;
                     if (obj.material.name == "Mt_WindScreens")
                         obj.material = Mt_WindScreens;
+                    
+                    if(obj.material.name == "Veyron_SS_rim"){
+                        obj.material = Mt_AlloyWheels
+                    }
+                    if(obj.material.name == "Veyron_SS_carbon_fiber"){
+                        obj.material = Mt_Body
+                    }
 
 
                 }
@@ -256,7 +292,7 @@
             scene.add(car.scene);
 
             controls.target = new THREE.Vector3(0,0,0)
-            controls.autoRotate = true
+            controls.autoRotate = false
             controls.autoRotateSpeed = 1
             controls.maxPolarAngle = Math.PI / 2.05;
 
@@ -273,7 +309,7 @@
 function SetupEnvironment(scene,manager,urls, textureLoader)
 {
     //Create and add an ambient light
-    var ambientLight = new THREE.AmbientLight( 0xffffff, 1 );
+    var ambientLight = new THREE.AmbientLight( 0xffffff, .2);
     scene.add( ambientLight );
 
     //Light Size
@@ -427,16 +463,6 @@ function LoadConfigurator(mConfigJSON)
                         '</a>',
                     '</li>',
                     '<li>',
-                        '<a class="nav-config-item" data-id="mirror_colors">',
-                            '<span>SIDE MIRRORS</span>',
-                        '</a>',
-                    '</li>',
-                    '<li>',
-                        '<a class="nav-config-item" data-id="wheel_designs">',
-                            '<span>WHEELS</span>',
-                        '</a>',
-                    '</li>',
-                    '<li>',
                         '<a class="nav-config-item" data-id="wheel_colors">',
                             '<span>WHEEL COLOR</span>',
                         '</a>',
@@ -541,7 +567,7 @@ function AddColorSwatches(container, configEntity, def, onClickCallback)
 	$(container).empty();
 
 	//Get the color array
-	var colorList = configEntity.colors.slice(0);;
+	var colorList = configEntity.colors.slice(0)
 
 	//If default color available
 	if(def)
