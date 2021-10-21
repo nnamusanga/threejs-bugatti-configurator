@@ -20,9 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dc3f0b95-af46-458a-a637-bb0d766bd16c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/model/Images/bugatti-logo-vector.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/three.js-master/build/TransformControls.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.three-js-car-configurator.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.three-js-car-configurator.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LoadAventador.js" beforeDir="false" afterPath="$PROJECT_DIR$/LoadAventador.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/meta.json" beforeDir="false" afterPath="$PROJECT_DIR$/model/meta.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,12 +65,16 @@
     </option>
   </component>
   <component name="ProjectId" id="1y70qNvHITiQ1Cz5Vyy6CkzSwcn" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -86,7 +95,9 @@
       <workItem from="1632774074533" duration="352000" />
       <workItem from="1633289484621" duration="20000" />
       <workItem from="1634224117313" duration="5199000" />
-      <workItem from="1634477247986" duration="8626000" />
+      <workItem from="1634477247986" duration="11418000" />
+      <workItem from="1634763824566" duration="1186000" />
+      <workItem from="1634824177858" duration="7401000" />
     </task>
     <servers />
   </component>
@@ -109,6 +120,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
 </project>

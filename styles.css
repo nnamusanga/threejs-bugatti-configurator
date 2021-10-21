@@ -8,6 +8,15 @@ canvas {
     position: absolute;
 }
 
+.bugatti-logo{
+    position: absolute;
+    z-index: 10;
+    margin-left: 25px !important;
+    
+    height: auto;
+    width: 10%;
+}
+
 h1 {
     position: absolute;
     top: 2em;
@@ -262,7 +271,7 @@ a
 .palette-container
 {
     display: block;
-    background: rgba(0,0,0,0.75);
+    background: rgba(0,0,0,0.0);
     width: 100%;
 }
 

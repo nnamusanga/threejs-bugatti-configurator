@@ -4,15 +4,15 @@
     "colors":
     [
       {
-        "name":"Blu Cepheus",
+        "name":"Blue",
         "value":"#4393E6"
       },
       {
-        "name":"Rosso Mars",
+        "name":"Red",
         "value":"#BF0012"
       },
       {
-        "name":"Bianco Monocerus",
+        "name":"Grey",
         "value":"#F2F3F5"
       }
     ],
@@ -95,11 +95,7 @@
       {
         "name":"Yellow",
         "value":"#E9A435"
-      },
-      { 
-          "name":"Black",
-        "value":"#000000"
-      },
+      }, 
       {
         "name":"White",
         "value":"#F1F7F7"
