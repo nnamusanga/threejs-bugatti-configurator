@@ -33,10 +33,10 @@ function SetUpControls()
     window.car = car
     //Create new orbit controls
     controls.target = new THREE.Vector3(0,0,0)
-    controls.enablePan = false;
-    controls.enableZoom = false
-    controls.maxZoom = 1
-    controls.minZoom = -1
+    controls.enablePan = true;
+    controls.enableZoom = true
+    // controls.maxZoom = 1
+    // controls.minZoom = -1
     controls.enableDamping = true;
     controls.dampingFactor = 0.07;
     controls.rotateSpeed = .7;
